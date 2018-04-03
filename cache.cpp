@@ -1,3 +1,5 @@
+// g++-6 -std=c++14 -I ../boost_1_65_1/stage/include cache.cpp -o cache -L../boost_1_65_1/stage/lib -lboost_thread -lboost_chrono -lboost_system -lpthread
+
 #define BOOST_THREAD_PROVIDES_FUTURE
 #define BOOST_THREAD_PROVIDES_FUTURE_CONTINUATION 
 
