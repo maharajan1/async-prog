@@ -1,3 +1,5 @@
+//  g++-6 -std=c++14 -I ../boost_1_65_1/stage/include file_counter.cpp -DPURE_ASYNC -o file_counter -L../boost_1_65_1/stage/lib -lboost_thread -lboost_chrono -lboost_system -lboost_filesystem -lpthread
+
 #define BOOST_THREAD_VERSION 4
 #define BOOST_THREAD_PROVIDES_EXECUTORS
 #define BOOST_THREAD_PROVIDES_FUTURE 
