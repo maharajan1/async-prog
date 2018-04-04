@@ -48,7 +48,6 @@ future<size_t> count_files_pure_async_n(const path &src)
 		}
 		else if (is_regular_file(src))
 		{
-			boost::this_thread::sleep_for(boost::chrono::milliseconds(1));
 			return make_ready_future((size_t)1);
 		}
 	}
@@ -175,7 +174,6 @@ size_t count_files_sync(const path &src)
 			return count;
 		}
 		else if (is_regular_file(src)) {
-			boost::this_thread::sleep_for(boost::chrono::microseconds(1));
 			return 1;
 		}
 	}
@@ -211,6 +209,10 @@ int main(int argc, const char *argv[]) {
 
 #ifdef PURE_ASYNC
 	result = count_files_pure_async(argv[1]).get();
+#endif
+
+#ifdef PURE_ASYNC_EX
+	result = count_files_pure_async_n(argv[1]).get();
 #endif
 
 	auto t2 = high_resolution_clock::now();
