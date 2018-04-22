@@ -104,6 +104,14 @@ private:
 	NodePtr root;
 };
 
+generator<int> range(int start, int end, int step = 1)
+{
+	for (int i = start; i <= end; i+=step)
+	{
+		co_yield i;
+	}
+}
+
 int main()
 {
 	Array a;
@@ -124,6 +132,13 @@ int main()
 	t.add(1200);
 
 	for (auto i : t.print_co())
+	{
+		cout << i << endl;
+	}
+
+	cout << "============" << endl;
+
+	for (auto i : range(1, 10))
 	{
 		cout << i << endl;
 	}
